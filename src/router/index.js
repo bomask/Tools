@@ -14,9 +14,9 @@ Vue.use(VueRouter)
 
 
 //2、创建路由对象
-const routes = [{path: '', redirect: '/uniIdMaker'},
+const routes = [{path: '', redirect: '/uniIDMaker'},
   {
-    path: '/uniIdMaker',
+    path: '/uniIDMaker',
     component: UniIDMaker 
   }, {
     path: '/tool2',

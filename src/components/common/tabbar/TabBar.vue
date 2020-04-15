@@ -15,10 +15,10 @@
   #tab-bar {
 	margin:0 auto;
 	display:flex;
-	background-color:#666690;
+	
 	width:70%;
 
-    box-shadow: 0px -1px 1px rgba(100, 100, 100, 0.08); /*设置阴影，让下框和界面的过渡好看些*/
+/*    box-shadow: 0px -1px 1px rgba(100, 100, 100, 0.08); 设置阴影，让下框和界面的过渡好看些   */
   }
 
 

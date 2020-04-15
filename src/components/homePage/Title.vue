@@ -28,7 +28,7 @@ user-select:none;
 
 .title_bg{
   display: flex;
-  background-color:#666699;
+  background-color:#99CCCC;
   height:50px;
   width:70%;
   border-radius: 20px;

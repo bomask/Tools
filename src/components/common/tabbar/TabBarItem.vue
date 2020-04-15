@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item" @click="itemClick">
+  <div class="tab-bar-item" @click="itemClick" :style="activeItemStyle">
 
     <div :style="activeStyle">
       <slot name="item-text"></slot>
@@ -15,7 +15,11 @@
       path: String,
       activeColor:{
         type:String,
-        default:"red",
+        default:"#FFFFFF",
+      },
+      activeBgColor:{
+        type:String,
+        default:"#FFCC99",
       }
     },
     data() {
@@ -28,6 +32,9 @@
       },
       activeStyle(){
         return this.isActive ? {color:this.activeColor} :{}
+      },
+      activeItemStyle(){
+        return this.isActive ? {backgroundColor:this.activeBgColor} :{}
       }
     },
 
@@ -42,12 +49,12 @@
 
 <style scoped>
   .tab-bar-item {
-	background-color:blue;
+	background-color:#CCCCCC;
 
   height:30px;
   width:120px;
 
-  margin: 2px 10px;
+  margin: 2px 10px 2px 0px;
   display: flex;
   justify-content:center;
   flex-wrap:wrap ;
@@ -56,6 +63,7 @@
   }
 
   .active {
-    color: red;
+    color: #FFFFFF;
+    background-color:#FFCC99;
   }
 </style>
