@@ -1,7 +1,7 @@
 <template>
   <div class="title">
    <div class ="title_bg">
-   <p>测试工具</p>
+   <p>极简工具</p>
    </div>
   </div>
 </template>

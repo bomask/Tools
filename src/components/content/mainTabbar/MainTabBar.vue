@@ -15,7 +15,7 @@
     </TabBarItem>
     <TabBarItem path="/tool4" >
 
-      <div slot="item-text">工具4</div>
+      <div slot="item-text">MarkDown</div>
     </TabBarItem>
   </TabBar>
 
