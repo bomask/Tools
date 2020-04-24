@@ -24,6 +24,7 @@ export default {
 display: flex;
 justify-content:center;
 user-select:none;
+overflow:hidden;
 }
 
 .title_bg{

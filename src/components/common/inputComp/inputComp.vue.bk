@@ -1,0 +1,28 @@
+<template>
+<div>
+<Input   placeholder="请输入内容"   v-model="input"   clearable> </Input>
+</div>
+</template>
+
+<script>
+
+import {Input} from 'element-ui'
+  export default {
+    name: "inputComp",
+        data () {
+        return {
+           input: ''
+        }
+    },
+components:{
+	Input
+	}
+  }
+</script>
+
+
+
+
+
+
+
