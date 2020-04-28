@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="inputcom">
-			<Input placeholder="请输入内容" size="mini" v-model="input" clearable> </Input>
+			<Input placeholder="请输入内容" size="mini" v-model="value" clearable> </Input>
 		</div>
 	</div>
 
@@ -18,7 +18,7 @@
 		name: "inputComp",
 		data() {
 			return {
-				input: ''
+				value: ''
 			}
 		},
 		components: {
@@ -33,7 +33,7 @@
 		display: flex;
 		align-items:center;
 		height: 40px;
-		width: 250px;
+		width: 300px;
 	}
 	
 	.content {
@@ -41,7 +41,7 @@
 		flex-wrap: wrap;
 		/*换行*/
 		justify-content: flex-end;
-		width: 90px;
+		width: 140px;
 		padding:0 3px 0 0;
 	}
 	
@@ -50,6 +50,12 @@
 		justify-content: flex-start;
 		width: 160px;
 	}
-	
+
+
+
+
+	.inputcom  .el-input__inner:focus{
+	border-color:#66CCCC;
+}
 
 </style>

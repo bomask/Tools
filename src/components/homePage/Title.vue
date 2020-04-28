@@ -42,6 +42,6 @@ margin:1%  1%;
 .title_bg p{
 	font-size: 30px;
   color:#FFFFFF;
-  letter-spacing:50px;
+  letter-spacing:10px;
 }
 </style>

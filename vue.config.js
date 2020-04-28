@@ -7,7 +7,7 @@ module.exports = {
 		    'Access-Control-Allow-Origin':'*' ,
 		    },
 		    hotOnly:false,
-		    disableHostCheck:true
+		    disableHostCheck:false
 		        },
 	    lintOnSave: false   // 取消 eslint 验证
 };
