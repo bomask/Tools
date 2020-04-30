@@ -1,7 +1,7 @@
-﻿import Vue from 'vue'
-import VueRouter from 'vue-router'
+﻿//import Vue from 'vue'
+//import VueRouter from 'vue-router'
 
-const UniIDMaker = () => import('../views/uniIDMaker/UniIDMaker')
+const DataMaker = () => import('../views/dataMaker/DataMaker')
 const tool2= () => import('../views/tool2/tool2')
 const tool3= () => import('../views/tool3/tool3')
 const tool4= () => import('../views/tool4/tool4')
@@ -14,10 +14,10 @@ Vue.use(VueRouter)
 
 
 //2、创建路由对象
-const routes = [{path: '', redirect: '/uniIDMaker'},
+const routes = [{path: '', redirect: '/DataMaker'},
   {
-    path: '/uniIDMaker',
-    component: UniIDMaker 
+    path: '/DataMaker',
+    component: DataMaker 
   }, {
     path: '/tool2',
     component: tool2

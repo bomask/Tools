@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="inputcom">
-			<Input placeholder="请输入内容" size="mini" v-model="value" clearable> </Input>
+			<Input placeholder="请输入内容" size="mini" v-model="value" clearable  > </Input>
 		</div>
 	</div>
 
@@ -24,6 +24,7 @@
 		components: {
 			Input
 		}
+
 	}
 </script>
 
@@ -41,14 +42,14 @@
 		flex-wrap: wrap;
 		/*换行*/
 		justify-content: flex-end;
-		width: 140px;
+		width: 120px;
 		padding:0 3px 0 0;
 	}
 	
 	.inputcom {
 		display: flex;
 		justify-content: flex-start;
-		width: 160px;
+		width: 180px;
 	}
 
 

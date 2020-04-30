@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d3688"],{"5d47":function(n,e,a){"use strict";a.r(e);var t=function(){var n=this,e=n.$createElement,a=n._self._c||e;return a("h2",[n._v("uniIdmaker")])},r=[],u={name:"UniIDMaker"},c=u,i=a("2877"),s=Object(i["a"])(c,t,r,!1,null,"6198f70a",null);e["default"]=s.exports}}]);
-//# sourceMappingURL=chunk-2d0d3688.30616d9b.js.map

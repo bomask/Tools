@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="selectcom">
-			<Select size="mini" v-model="value" clearable placeholder="请选择">
+			<Select size="mini" v-model="value" clearable   placeholder="请选择">
 				<Option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
 				</Option>
 			</Select>
@@ -32,6 +32,7 @@
 			Select,
 			Option
 		}
+		
 	}
 </script>
 
@@ -48,14 +49,14 @@
 		flex-wrap: wrap;
 		/*换行*/
 		justify-content: flex-end;
-		width: 140px;
+		width: 120px;
 		padding: 0 3px 0 0;
 	}
 	
 	.selectcom {
 		display: flex;
 		justify-content: flex-start;
-		width: 160px;
+		width: 180px;
 	}
 	
 	.inputcom .el-input__inner:focus {

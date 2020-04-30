@@ -1,9 +1,9 @@
 <template>
 
   <TabBar>
-    <TabBarItem path="/uniIDMaker" >
+    <TabBarItem path="/DataMaker" >
 
-      <div slot="item-text">uniIDMaker</div>
+      <div slot="item-text">DataMaker</div>
     </TabBarItem>
     <TabBarItem path="/tool2" >
 
