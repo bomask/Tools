@@ -32,12 +32,8 @@ module.exports = {
 			filename: '[path].gz[query]',
 			algorithm: "gzip",    //brotliCompress
 			test: /(\.js(\?.*)?)|(\.html(\?.*)?)|(\.css(\?.*)?)$/i,
-//			compressionOptions: {
-//				level: 5
-//			},
 			threshold: 10240,
 			minRatio: 0.8,
-//			deleteOriginalAssets: true,
 			cache:true
 		})],
 

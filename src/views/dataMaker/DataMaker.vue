@@ -43,7 +43,7 @@
 	</div>
 
 	<div class="submitForm">
-		<Button type="primary" :plain="true"  @click="onSubmit" size="small">提交</Button>
+		<Button type="primary"  round  @click="onSubmit" size="small">提交</Button>
 	</div>
 
 	
@@ -161,4 +161,9 @@
   .el-message{
 		padding: 5px 15px 5px 20px;
 	}
+
+  .el-button--primary{
+	background-color: #9cc;
+	border-color: #9cc;
+}
 </style>

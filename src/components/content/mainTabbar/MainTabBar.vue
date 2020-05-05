@@ -5,7 +5,7 @@
 
       <div slot="item-text">DataMaker</div>
     </TabBarItem>
-    <TabBarItem path="/tool2" >
+    <TabBarItem path="/timeTools" >
 
       <div slot="item-text">工具2</div>
     </TabBarItem>

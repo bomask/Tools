@@ -2,7 +2,7 @@
 //import VueRouter from 'vue-router'
 
 const DataMaker = () => import('../views/dataMaker/DataMaker')
-const tool2= () => import('../views/tool2/tool2')
+const timeTools= () => import('../views/timeTools/timeTools')
 const tool3= () => import('../views/tool3/tool3')
 const tool4= () => import('../views/tool4/tool4')
 
@@ -19,8 +19,8 @@ const routes = [{path: '', redirect: '/DataMaker'},
     path: '/DataMaker',
     component: DataMaker 
   }, {
-    path: '/tool2',
-    component: tool2
+    path: '/timeTools',
+    component: timeTools
   }, {
     path: '/tool3',
     component: tool3
