@@ -3,9 +3,9 @@
 
 目前完成情况
 
-![工具1](https://i.loli.net/2020/05/05/FtGIunzsJMW687a.png)
+![工具1](https://github.com/bomask/Tools/tree/master/src//assets/img/tool1.png)
 
-![工具2](https://i.loli.net/2020/05/05/rAhZVLeymcntF23.png)
+![工具2](https://github.com/bomask/Tools/tree/master/src//assets/img/tool2.png)
 
 # uni_id_maker
 
