@@ -7,7 +7,9 @@ const cdn = {
 	  js: [
 		     "//cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js",
 		      "//unpkg.com/vue-router@2.8.1/dist/vue-router.min.js",
-		      "//unpkg.com/element-ui@2.13.1/lib/index.js"
+		      "//unpkg.com/element-ui@2.13.1/lib/index.js",
+			"//cdn.jsdelivr.net/npm/jutils-src"
+
 		    ]
 }
 

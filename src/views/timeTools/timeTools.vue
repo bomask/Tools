@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="timeToolBody">
     <div class="timeUnix">
       <div class="bgBox">
         <bgBox>
@@ -35,7 +35,7 @@
 </script>
 
 <style>
-  .body {
+  .timeToolBody {
     width: 70%;
     margin: 0 auto;
 

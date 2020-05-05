@@ -37,11 +37,12 @@ justify-content:center;
 flex-wrap:wrap ;
 align-content:center;
 margin:1%  1%;
+box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 }
 
 .title_bg p{
 	font-size: 30px;
   color:#FFFFFF;
-  letter-spacing:10px;
+  letter-spacing:28px;
 }
 </style>

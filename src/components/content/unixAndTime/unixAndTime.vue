@@ -4,7 +4,7 @@
       <div class="Item-text"><span>当前时间</span></div>
       <div class="Item-a"><Input v-model="dateTimeFormat" readonly></Input></div>
       <div class="Item-button">
-        <Button type="primary" round>转换</Button>
+        <Button type="primary" round @click="transformNowTime">转换</Button>
       </div>
       <div class="Item-a"><Input v-model="dateTimeFormatStop" readonly></Input></div>
       <div class="Item-b"><Input v-model="unixForNowTime" readonly></Input></div>
@@ -25,7 +25,7 @@
         <DatePicker v-model="anyTimeTOUnixValue" type="datetime" placeholder="选择日期时间"></DatePicker>
       </div>
       <div class="Item-button">
-        <Button type="primary" round>转换</Button>
+        <Button type="primary" round @click="transformToUnix">转换</Button>
       </div>
       <div class="Item-a"><Input v-model="unixForAnyTime" readonly></Input></div>
       <div class="Item-unit"><Select v-model="unitValue2" placeholder="单位：秒(s)">
@@ -37,11 +37,13 @@
         </Option>
       </Select></div>
     </div>
+
+
     <div class="unixToTime">
       <div class="Item-text"><span>时间戳</span></div>
-      <div class="Item-a"><Input v-model="anyUnixToTimeValue" placeholder="请输入时间戳"></Input></div>
+      <div class="Item-a"><Input v-model="anyUnixToTimeValue" placeholder="请输入时间戳" clearable></Input></div>
       <div class="Item-button">
-        <Button type="primary" round>转换</Button>
+        <Button type="primary" round @click="transformToTime">转换</Button>
       </div>
       <div class="Item-a"><Input v-model="timeForAnyUnix" readonly></Input></div>
       <div class="Item-unit"><Select v-model="unitValue3" placeholder="单位：秒(s)">
@@ -57,7 +59,7 @@
 </template>
 
 <script>
-  import {Input, Button, Select, Option, DatePicker} from "element-ui"
+  import {Input, Button, Select, Option, DatePicker, Message} from "element-ui"
 
   export default {
     name: "unixAndTime",
@@ -99,13 +101,67 @@
         unitValue3: 's',
         anyTimeTOUnixValue: '',
         unixForAnyTime: '',
-        anyUnixToTimeValue:'',
-        timeForAnyUnix:'',
+        anyUnixToTimeValue: '',
+        timeForAnyUnix: '',
       };
     },
     computed: {
       dateTimeFormat() {
         return this.dateTime.getFullYear() + '-' + String(this.dateTime.getMonth() + 1).padStart(2, 0) + '-' + String(this.dateTime.getDate()).padStart(2, 0) + ' ' + String(this.dateTime.getHours()).padStart(2, 0) + ':' + String(this.dateTime.getMinutes()).padStart(2, 0) + ':' + String(this.dateTime.getSeconds()).padStart(2, 0);
+      }
+    },
+    methods: {
+      transformNowTime() {
+        this.dateTimeFormatStop = this.dateTimeFormat;
+        if (this.unitValue1 === "s") {
+          this.unixForNowTime = Date.parse(this.stringToDate(this.dateTimeFormatStop)) / 1000;/*精确到秒*/
+        } else {
+          this.unixForNowTime = this.stringToDate(this.dateTimeFormatStop).getTime();/*精确到毫秒*/
+        }
+      },
+      transformToUnix() {
+        if (this.anyTimeTOUnixValue == "" || typeof (this.anyTimeTOUnixValue) == "undefined" || this.anyTimeTOUnixValue == null) {
+
+          Message.warning({
+            message: '您输入的日期格式有误 (＞﹏＜) ',
+            type: 'warning',
+          });
+          this.unixForAnyTime = '';
+        } else {
+          if (this.unitValue2 === "s") {
+            this.unixForAnyTime = Date.parse(this.anyTimeTOUnixValue) / 1000;/*精确到秒*/
+          } else {
+            this.unixForAnyTime = this.anyTimeTOUnixValue.getTime();/*精确到毫秒*/
+          }
+        }
+      },
+      transformToTime() {
+        let num = /^\d{10,13}$/
+
+        if (this.unitValue3 == "s" && num.test(this.anyUnixToTimeValue)) {
+          this.timeForAnyUnix = jutils.formatDate(new Date(this.anyUnixToTimeValue * 1000), "YYYY-MM-DD HH:ii:ss")
+        } else if (this.unitValue3 == "ms" && num.test(this.anyUnixToTimeValue)) {
+          this.timeForAnyUnix = jutils.formatDate(new Date(this.anyUnixToTimeValue * 1), "YYYY-MM-DD HH:ii:ss")
+        } else {
+          this.timeForAnyUnix = '';
+          Message.warning({
+            message: '您输入的时间戳格式有误，必须是10或者13位的数字 (＞﹏＜) ',
+            type: 'warning',
+          });
+        }
+      },
+      stringToDate(str) {
+        try {
+          /*字符串转换为Date类型的方法*/
+          if (str) {
+            let getDate = str.split(" ")[0].split('-');
+            let getTime = str.split(" ")[1].split(':');
+            let newDate = new Date(getDate[0], getDate[1] - 1, getDate[2], getTime[0], getTime[1], getTime[2]);
+            return newDate
+          }
+        } catch (e) {
+          console.log("Error:" + e);
+        }
       }
     },
     mounted() {
@@ -128,24 +184,26 @@
 <style>
   .timeNow,
   .timeToUnix,
-  .unixToTime{
+  .unixToTime {
     display: flex;
-   justify-content: flex-start;
-   /* justify-content: center;*/
+    justify-content: flex-start;
+    /* justify-content: center;*/
     align-items: center;
-    flex-wrap:nowrap;
+    flex-wrap: wrap;
   }
 
 
-  .Item-a ,.Item-b {
+  .Item-a, .Item-b {
     width: 220px;
     display: flex;
     justify-content: center;
   }
-  .Item-a{
+
+  .Item-a {
     padding: 12px 6px 12px 6px;
   }
-  .Item-b{
+
+  .Item-b {
     padding: 12px 6px 12px 0px;
   }
 
@@ -158,14 +216,14 @@
     padding: 12px 6px 12px 6px;
   }
 
-  .Item-button{
+  .Item-button {
     display: flex;
     justify-content: center;
     width: 76px;
     padding: 12px 6px 12px 6px;
   }
 
-  .Item-unit{
+  .Item-unit {
     display: flex;
     justify-content: center;
     width: 180px;

@@ -60,10 +60,14 @@
   flex-wrap:wrap ;
   align-content:center;
   border-radius: 15px;
+  user-select:none;
+overflow: hidden;
+box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
   }
 
   .active {
     color: #FFFFFF;
     background-color:#FFCC99;
+box-shadow:none;
   }
 </style>

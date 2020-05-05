@@ -7,7 +7,7 @@
     </TabBarItem>
     <TabBarItem path="/timeTools" >
 
-      <div slot="item-text">工具2</div>
+      <div slot="item-text">时间工具</div>
     </TabBarItem>
     <TabBarItem path="/tool3" >
 
